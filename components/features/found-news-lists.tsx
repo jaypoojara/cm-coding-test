@@ -5,6 +5,7 @@ import { Container } from "../shared/container";
 import { Divider } from "../shared/divider/divider";
 import { NewsCard } from "./news/news-card";
 import { Stats } from "./stats";
+import { InfiniteHits } from "../shared/algolia-infinite-hits";
 
 const Hit = ({ hit }: any) => {
   const dataItem = mapNewsItemPropsFromApiResponse(hit);
@@ -26,7 +27,7 @@ export const FoundNewsLists = ({ searchLabel }: { searchLabel: String }) => {
     <InstantSearch searchClient={searchClient} indexName="news">
       <section className="found-news-list">
         <Container className="grid grid-cols-4 relative gap-8">
-          <div className="search-and-filter sticky top-8">
+          <div className="search-and-filter sticky top-8 h-fit">
             <div className="wrapper border p-4">
               <h4 className="text-xl mt-2 mb-8">{searchLabel}</h4>
               <div className="search-wrapper">
@@ -37,12 +38,9 @@ export const FoundNewsLists = ({ searchLabel }: { searchLabel: String }) => {
           <div className="display-list col-span-3">
             <Stats />
             <Divider className="mt-6 mb-9" />
-            <Hits
+            <InfiniteHits
               hitComponent={Hit}
-              classNames={{
-                root: "MyCustomHits",
-                list: "grid grid-cols-1 items-center gap-8 ",
-              }}
+              className={{ list: "grid grid-cols-1 items-center gap-8 " }}
             />
           </div>
         </Container>
