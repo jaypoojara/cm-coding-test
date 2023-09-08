@@ -7,6 +7,9 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import ErrorBoundary from "../components/shared/error-bounderies";
 
+/**
+ * @ref: https://github.com/bvaughn/react-error-boundary/issues/111
+ */
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ErrorBoundary>
