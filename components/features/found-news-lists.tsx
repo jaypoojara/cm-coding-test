@@ -1,11 +1,11 @@
-import { Hits, InstantSearch, SearchBox } from "react-instantsearch";
+import { InstantSearch, SearchBox } from "react-instantsearch";
 import { mapNewsItemPropsFromApiResponse } from "../../helpers/news-items-props-mapping";
 import searchClient from "../../lib/algoliaService";
+import { InfiniteHits } from "./algolia/algolia-infinite-hits";
 import { Container } from "../shared/container";
-import { Divider } from "../shared/divider/divider";
+import { Divider } from "../shared/divider";
 import { NewsCard } from "./news/news-card";
 import { Stats } from "./stats";
-import { InfiniteHits } from "../shared/algolia-infinite-hits";
 
 const Hit = ({ hit }: any) => {
   const dataItem = mapNewsItemPropsFromApiResponse(hit);

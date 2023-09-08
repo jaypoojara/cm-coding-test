@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import { useInfiniteHits } from "react-instantsearch";
+import { useInfiniteHits, useInstantSearch } from "react-instantsearch";
 import { twMerge } from "tailwind-merge";
+import { Loading } from "../../shared/loading";
 
 interface InfiniteHitsProps {
   hitComponent: any;
@@ -36,6 +37,11 @@ export const InfiniteHits = ({
       };
     }
   }, [isLastPage, showMore]);
+
+  const { status } = useInstantSearch();
+  if (status === "loading" || status === "stalled") {
+    return <Loading />;
+  }
 
   return (
     <div className={twMerge("ais-InfiniteHits", className?.item)}>

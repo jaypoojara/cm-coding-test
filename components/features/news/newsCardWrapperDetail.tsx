@@ -1,7 +1,7 @@
 import { Highlight } from "react-instantsearch";
 import { twMerge } from "tailwind-merge";
 import { truncate } from "../../../utils/text";
-import { Divider } from "../../shared/divider/divider";
+import { Divider } from "../../shared/divider";
 import { FormatDate } from "../../shared/format-date";
 import Link from "next/link";
 

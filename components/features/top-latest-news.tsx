@@ -16,7 +16,7 @@ const Hit = ({ hit }: any) => {
   );
 };
 
-export const TopLAtestNews = () => {
+export const TopLatestNews = () => {
   return (
     <section className="top-latest-news">
       <Container>

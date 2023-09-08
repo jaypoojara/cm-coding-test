@@ -1,11 +1,11 @@
 import Head from "next/head";
 import { FoundNewsLists } from "../../components/features/found-news-lists";
-import { Divider } from "../../components/shared/divider/divider";
+import { TopLatestNews } from "../../components/features/top-latest-news";
+import { Divider } from "../../components/shared/divider";
 import { Layout } from "../../components/templates/layout";
 import { ContentFulApiResponse } from "../../interfaces/contentFulApiResponse";
 import { ContentFulNewsConfig } from "../../interfaces/contentFulNewsConfig";
 import { getNewsItems } from "../../lib/contentfulService";
-import { TopLAtestNews } from "../../components/features/top-latest-news";
 
 const Home = (props: ContentFulApiResponse) => {
   const { logoDetails, menuLabel, searchLabel, pageTitle } = props;
@@ -19,7 +19,7 @@ const Home = (props: ContentFulApiResponse) => {
 
       <Layout logoDetails={logoDetails} menuLabel={menuLabel}>
         <main className="py-8 ">
-          <TopLAtestNews />
+          <TopLatestNews />
           <Divider className="my-6" />
           <FoundNewsLists searchLabel={searchLabel} />
         </main>
