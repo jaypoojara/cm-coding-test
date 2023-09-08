@@ -1,7 +1,10 @@
 export interface NewsItem {
-  title: String;
-  name: String;
-  description: String;
+  topicsTitle: string;
+  name: string;
+  description: string;
   publicationDate: Date;
-  organizationFieldName: String;
+  organizationFieldName: string;
+  slug: string;
+  imageUrl: string;
+  originalHit: any;
 }
