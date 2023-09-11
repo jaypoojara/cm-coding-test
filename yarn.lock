@@ -3199,6 +3199,7 @@ __metadata:
     postcss: "npm:^8.4.29"
     react: "npm:17.0.2"
     react-dom: "npm:17.0.2"
+    react-error-boundary: "npm:^4.0.11"
     react-instantsearch: "npm:^7.0.2"
     react-query: "npm:^3.34.0"
     tailwind-merge: "npm:^1.14.0"
@@ -7238,6 +7239,17 @@ __metadata:
   peerDependencies:
     react: 17.0.2
   checksum: 51abbcb72450fe527ebf978c3bc989ba266630faaa53f47a2fae5392369729e8de62b2e4683598cbe651ea7873cd34ec7d5127e2f50bf4bfe6bd0c3ad9bddcb0
+  languageName: node
+  linkType: hard
+
+"react-error-boundary@npm:^4.0.11":
+  version: 4.0.11
+  resolution: "react-error-boundary@npm:4.0.11"
+  dependencies:
+    "@babel/runtime": "npm:^7.12.5"
+  peerDependencies:
+    react: ">=16.13.1"
+  checksum: 33dad3df7687971e65c7182d97f44bd618cb5d77d1c338e0a7c17c5cf7706a07b9055fffb771ff19bad750d40dd3cfd18d661a60b0518e73197e294dc185f18c
   languageName: node
   linkType: hard
 

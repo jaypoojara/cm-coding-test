@@ -8,16 +8,16 @@ const client = createClient({
 });
 
 // Retrieve the list of blog posts from Contentful
-export const getNewsItems = async () => {
+export const getNewsItems = async (): Promise<ContentFulNewsConfig> => {
   const response = await client.getEntries({
     content_type: "newsconfig",
   });
 
-  const fields: ContentFulNewsConfig | undefined = response.items
-    .map((item) => {
+  const fields: ContentFulNewsConfig = response.items.map(
+    (item): ContentFulNewsConfig => {
       return item.fields as ContentFulNewsConfig;
-    })
-    .pop();
+    }
+  ).pop() as ContentFulNewsConfig;
 
   return fields;
 };

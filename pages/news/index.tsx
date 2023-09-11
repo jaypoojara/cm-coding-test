@@ -3,9 +3,8 @@ import { FoundNewsLists } from "../../components/features/foundNewsLists";
 import { TopLatestNews } from "../../components/features/topLatestNews";
 import { Divider } from "../../components/shared/divider";
 import { Layout } from "../../components/templates/layout";
+import { contentfulDataFetching } from "../../helpers/contentfulDataFetching";
 import { ContentFulApiResponse } from "../../interfaces/contentFulApiResponse";
-import { ContentFulNewsConfig } from "../../interfaces/contentFulNewsConfig";
-import { getNewsItems } from "../../lib/contentfulService";
 
 const Home = (props: ContentFulApiResponse) => {
   const { logoDetails, menuLabel, searchLabel, pageTitle } = props;
@@ -29,60 +28,17 @@ const Home = (props: ContentFulApiResponse) => {
 };
 
 export async function getServerSideProps() {
-  const fields: ContentFulNewsConfig | undefined = await getNewsItems();
-
-  let logoUrl: string,
-    logoWidth: number,
-    logoHeight: number,
-    logoTitle: string,
-    menuLabel: string,
-    searchLabel: string,
-    pageTitle: string;
-
-  logoUrl = "/vercel.svg";
-  logoWidth = 150;
-  logoHeight = 50;
-  logoTitle = "";
-  menuLabel = "News";
-  searchLabel = "Filter & Refine";
-  pageTitle = "CredibleMind Cm test task";
-
-  if (fields) {
-    // logo details
-    const {
-      logo: {
-        fields: {
-          title: responseLogoTitle,
-          file: {
-            url: responseLogoUrl,
-            details: {
-              image: { width: responseLogoWidth, height: responseLogoHeight },
-            },
-          },
-        },
+  try {
+    const contentFulResponse: ContentFulApiResponse =
+      await contentfulDataFetching();
+    return {
+      props: {
+        ...contentFulResponse,
       },
-      menuLabel: responseMenuLabel,
-      searchLabel: responseSearchLabel,
-      title: responsePageTitle,
-    } = fields;
-
-    logoUrl = responseLogoUrl;
-    logoWidth = responseLogoWidth;
-    logoHeight = responseLogoHeight;
-    logoTitle = responseLogoTitle;
-    menuLabel = responseMenuLabel;
-    searchLabel = responseSearchLabel;
-    pageTitle = responsePageTitle;
+    };
+  } catch (err) {
+    return { notFound: true };
   }
-
-  return {
-    props: {
-      logoDetails: { logoUrl, logoHeight, logoWidth, logoTitle },
-      menuLabel,
-      searchLabel,
-      pageTitle,
-    },
-  };
 }
 
 export default Home;
