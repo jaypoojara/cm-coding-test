@@ -1,27 +1,13 @@
 import type { GetServerSideProps } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import { Configure, Hits, InstantSearch } from "react-instantsearch";
-import { NewsCard } from "../../components/features/news/news-card";
+import { Hit } from "../../components/features/algolia/hit";
 import { Container } from "../../components/shared/container";
 import { Layout } from "../../components/templates/layout";
-import { mapNewsItemPropsFromApiResponse } from "../../helpers/news-items-props-mapping";
 import { ContentFulApiResponse } from "../../interfaces/contentFulApiResponse";
 import { ContentFulNewsConfig } from "../../interfaces/contentFulNewsConfig";
 import searchClient from "../../lib/algoliaService";
 import { getNewsItems } from "../../lib/contentfulService";
-
-const Hit = ({ hit }: any) => {
-  const dataItem = mapNewsItemPropsFromApiResponse(hit);
-  return (
-    <NewsCard
-      news={dataItem}
-      key={dataItem.slug.toString()}
-      className="mb-6"
-      isCardLayout={false}
-    />
-  );
-};
 
 const NewsWithSlug = (props: ContentFulApiResponse & { slug: string }) => {
   const { slug, logoDetails, menuLabel, pageTitle } = props;
@@ -38,7 +24,9 @@ const NewsWithSlug = (props: ContentFulApiResponse & { slug: string }) => {
             <InstantSearch searchClient={searchClient} indexName="news">
               <Configure filters={`slug:${slug}`} />
               <Hits
-                hitComponent={Hit}
+                hitComponent={({ hit }) => (
+                  <Hit hit={hit} isCardLayout={false} />
+                )}
                 classNames={{
                   root: "MyCustomHits",
                   list: "grid grid-cols-1 items-center gap-8 ",

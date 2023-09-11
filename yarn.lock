@@ -1062,12 +1062,12 @@ __metadata:
   linkType: hard
 
 "@floating-ui/dom@npm:^1.5.1":
-  version: 1.5.1
-  resolution: "@floating-ui/dom@npm:1.5.1"
+  version: 1.5.2
+  resolution: "@floating-ui/dom@npm:1.5.2"
   dependencies:
     "@floating-ui/core": "npm:^1.4.1"
     "@floating-ui/utils": "npm:^0.1.1"
-  checksum: cda044e72b6e015af70ef482ff19cae34b085c69a04e3d5d48613a58f6e88b71dbd7cc2f2ae02fc1f5f29ad8ba13c1c3074e2a4416b8c73ede47139177b5749c
+  checksum: ce0e7dca2d36667ef4a72a2200bd7c49bf1b1bb94a5a09efc27e9d225175d92f41f00a037f1ef060f8fe78af242bc0889e4b12dd0be4dcd7a772f4a63804e693
   languageName: node
   linkType: hard
 

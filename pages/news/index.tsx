@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { FoundNewsLists } from "../../components/features/found-news-lists";
-import { TopLatestNews } from "../../components/features/top-latest-news";
+import { FoundNewsLists } from "../../components/features/foundNewsLists";
+import { TopLatestNews } from "../../components/features/topLatestNews";
 import { Divider } from "../../components/shared/divider";
 import { Layout } from "../../components/templates/layout";
 import { ContentFulApiResponse } from "../../interfaces/contentFulApiResponse";

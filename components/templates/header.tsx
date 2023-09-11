@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import { Container } from "../../shared/container";
+import { Container } from "../shared/container";
 import Image from "next/image";
-import { LogoDetails } from "../../../interfaces/logoDetails";
+import { LogoDetails } from "../../interfaces/logoDetails";
 
 interface Props {
   logoDetails: LogoDetails;

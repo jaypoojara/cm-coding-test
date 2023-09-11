@@ -1,20 +1,7 @@
 import { Configure, Hits, InstantSearch } from "react-instantsearch";
-import { mapNewsItemPropsFromApiResponse } from "../../helpers/news-items-props-mapping";
 import searchClient from "../../lib/algoliaService";
 import { Container } from "../shared/container";
-import { NewsCard } from "./news/news-card";
-
-const Hit = ({ hit }: any) => {
-  const dataItem = mapNewsItemPropsFromApiResponse(hit);
-  return (
-    <NewsCard
-      news={dataItem}
-      key={dataItem.slug.toString()}
-      className="mb-6"
-      isCardLayout={true}
-    />
-  );
-};
+import { Hit } from "./algolia/hit";
 
 export const TopLatestNews = () => {
   return (
@@ -28,7 +15,7 @@ export const TopLatestNews = () => {
         <InstantSearch searchClient={searchClient} indexName="news">
           <Configure hitsPerPage={3} />
           <Hits
-            hitComponent={Hit}
+            hitComponent={({ hit }) => <Hit hit={hit} isCardLayout={true} />}
             classNames={{
               list: "wrapper grid grid-cols-3 gap-5",
               item: "grid grid-cols-1 grid-rows-[1fr_10rem] gap-4",

@@ -1,26 +1,10 @@
 import { InstantSearch, SearchBox } from "react-instantsearch";
-import { mapNewsItemPropsFromApiResponse } from "../../helpers/news-items-props-mapping";
 import searchClient from "../../lib/algoliaService";
-import { InfiniteHits } from "./algolia/algolia-infinite-hits";
 import { Container } from "../shared/container";
 import { Divider } from "../shared/divider";
-import { NewsCard } from "./news/news-card";
-import { Stats } from "./stats";
-
-const Hit = ({ hit }: any) => {
-  const dataItem = mapNewsItemPropsFromApiResponse(hit);
-  return (
-    <>
-      <NewsCard
-        news={dataItem}
-        key={dataItem.slug.toString()}
-        className="mb-6"
-        isCardLayout={false}
-      />
-      <Divider />
-    </>
-  );
-};
+import { InfiniteHits } from "./algolia/algoliaInfiniteHits";
+import { Hit } from "./algolia/hit";
+import { Stats } from "./algolia/stats";
 
 export const FoundNewsLists = ({ searchLabel }: { searchLabel: String }) => {
   return (
@@ -39,7 +23,9 @@ export const FoundNewsLists = ({ searchLabel }: { searchLabel: String }) => {
             <Stats />
             <Divider className="mt-6 mb-9" />
             <InfiniteHits
-              hitComponent={Hit}
+              hitComponent={({ hit }: { hit: any }) => (
+                <Hit hit={hit} isCardLayout={false} />
+              )}
               className={{ list: "grid grid-cols-1 items-center gap-8 " }}
             />
           </div>
