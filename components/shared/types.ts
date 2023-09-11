@@ -10,3 +10,5 @@ export type FormatDateProps = {
   date: number | Date | undefined;
   locale?: string;
 };
+
+export type ToggleViewButtonProps = { isListLayout: Boolean };

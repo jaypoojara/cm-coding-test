@@ -7,10 +7,16 @@ import { Hit } from "./algolia/hit";
 import { Stats } from "./algolia/stats";
 import { foundNewsListsProps } from "./types";
 import { CommonHtmlDivProps } from "../shared/types";
+import { useState } from "react";
+import { ToggleViewButton } from "../shared/toggleViewButton";
 
 export const FoundNewsLists = ({
   searchLabel,
 }: foundNewsListsProps & CommonHtmlDivProps) => {
+  const [isListLayout, setIsLayout] = useState(true);
+  const layoutChangeHandler = () => {
+    setIsLayout((prevIsLayout) => !prevIsLayout);
+  };
   return (
     <InstantSearch searchClient={searchClient} indexName="news">
       <section className="found-news-list">
@@ -24,13 +30,26 @@ export const FoundNewsLists = ({
             </div>
           </div>
           <div className="display-list col-span-3">
-            <Stats />
+            <div className="flex justify-between items-center">
+              <Stats />
+              <ToggleViewButton
+                onClick={layoutChangeHandler}
+                isListLayout={isListLayout}
+              />
+            </div>
             <Divider className="mt-6 mb-9" />
             <InfiniteHits
               hitComponent={({ hit }: { hit: any }) => (
-                <Hit hit={hit} isCardLayout={false} />
+                <Hit hit={hit} isCardLayout={!isListLayout} />
               )}
-              className={{ list: "grid grid-cols-1 items-center gap-8 " }}
+              className={{
+                list: isListLayout
+                  ? "grid grid-cols-1 items-center gap-8"
+                  : "grid grid-cols-2 items-center gap-8",
+                item: !isListLayout
+                  ? "grid grid-cols-1 grid-rows-[18.75rem_10rem] gap-4"
+                  : "",
+              }}
             />
           </div>
         </Container>
