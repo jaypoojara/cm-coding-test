@@ -1,18 +1,13 @@
 import { twMerge } from "tailwind-merge";
-import { NewsItem } from "../../../interfaces/newsItem";
+import { NewsCardProps } from "../../../types/newsCardProps";
 import { NewsCardWrapperDetails } from "./newsCardWrapperDetail";
 
-interface NewsProps {
-  news: NewsItem;
-  isCardLayout?: Boolean;
-  className: string;
-}
 
 export const NewsCard = ({
   news,
   isCardLayout = false,
   className,
-}: NewsProps) => {
+}: NewsCardProps) => {
   const {
     topicsTitle,
     publicationDate,

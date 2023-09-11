@@ -1,15 +1,9 @@
-import Link from "next/link";
 
-import { Container } from "../shared/container";
 import Image from "next/image";
-import { LogoDetails } from "../../interfaces/logoDetails";
+import { HeaderProps } from "../../types/headerProps";
+import { Container } from "../shared/container";
 
-interface Props {
-  logoDetails: LogoDetails;
-  menuLabel: string;
-}
-
-export const Header = (props: Props) => {
+export const Header = (props: HeaderProps) => {
   const {
     logoDetails: { logoHeight, logoTitle, logoUrl, logoWidth },
     menuLabel,

@@ -1,8 +1,6 @@
 import { LogoDetails } from "./logoDetails";
 
-export interface ContentFulApiResponse {
+export type HeaderProps = {
   logoDetails: LogoDetails;
   menuLabel: string;
-  searchLabel: string;
-  pageTitle: string;
-}
+};

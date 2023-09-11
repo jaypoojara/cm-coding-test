@@ -1,10 +1,6 @@
 import { mapNewsItemPropsFromApiResponse } from "../../../helpers/newsItemsPropsMapping";
+import { HitProps } from "../../../types/hitProps";
 import { NewsCard } from "../news/newsCard";
-
-type HitProps = {
-  hit: any;
-  isCardLayout: Boolean;
-};
 
 export const Hit = ({ hit, isCardLayout }: HitProps) => {
   const dataItem = mapNewsItemPropsFromApiResponse(hit);

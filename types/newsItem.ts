@@ -1,4 +1,4 @@
-export interface NewsItem {
+export type NewsItem = {
   topicsTitle: string;
   name: string;
   description: string;
@@ -7,4 +7,4 @@ export interface NewsItem {
   slug: string;
   imageUrl: string;
   originalHit: any;
-}
+};

@@ -4,28 +4,20 @@ import { truncate } from "../../../utils/text";
 import { Divider } from "../../shared/divider";
 import { FormatDate } from "../../shared/format-date";
 import Link from "next/link";
-
-interface NewsCardWrapperDetailsProps {
-  name: string;
-  topicsTitle: string;
-  originalHit: any;
-  publicationDate: Date;
-  organizationFieldName: string;
-  isCardLayout: Boolean;
-  description: string;
-  slug: string;
-  className?: string;
-}
+import {
+  NewsCardDescriptionProps,
+  NewsCardFooterProps,
+  NewsCardNameProps,
+  NewsCardTopicsTitleProps,
+  NewsCardWrapperDetailsProps,
+} from "../../../types/newsCardWrapperDetailsProps";
+import { CommonHtmlDivProps } from "../../../types/commonHtmlDivProps";
 
 const NewsCardTopicsTitle = ({
   topicsTitle,
   originalHit,
   className,
-}: {
-  topicsTitle: string;
-  originalHit: any;
-  className?: string;
-}) => {
+}: NewsCardTopicsTitleProps & CommonHtmlDivProps) => {
   const originalHitTopicsLength = originalHit?.topics?.length || 0;
   /**
    * @ref: https://github.com/algolia/instantsearch/issues/5791
@@ -47,15 +39,7 @@ const NewsCardTopicsTitle = ({
   });
 };
 
-const NewsCardName = ({
-  name,
-  slug,
-  originalHit,
-}: {
-  name: string;
-  originalHit: any;
-  slug: string;
-}) => {
+const NewsCardName = ({ name, slug, originalHit }: NewsCardNameProps) => {
   return (
     <h3 className="text-primary-500 text-4xl font-medium mb-6 self-start">
       <Link href={`news/${slug}`}>{name}</Link>
@@ -63,7 +47,7 @@ const NewsCardName = ({
   );
 };
 
-const NewsCardDescription = ({ description }: { description: string }) => {
+const NewsCardDescription = ({ description }: NewsCardDescriptionProps) => {
   return (
     <p className="text-primary-400 mb-4 text-lg">{truncate(description)}</p>
   );
@@ -72,10 +56,7 @@ const NewsCardDescription = ({ description }: { description: string }) => {
 const NewsCardFooter = ({
   publicationDate,
   organizationFieldName,
-}: {
-  publicationDate: Date;
-  organizationFieldName: string;
-}) => {
+}: NewsCardFooterProps) => {
   return (
     <footer className=" flex items-center gap-6">
       <div className="text-primary-400">
@@ -99,7 +80,7 @@ export const NewsCardWrapperDetails = ({
   name,
   slug,
   className,
-}: NewsCardWrapperDetailsProps) => {
+}: NewsCardWrapperDetailsProps & CommonHtmlDivProps) => {
   return (
     <div className={twMerge("detail-wrapper", className)}>
       <div className="mb-1">

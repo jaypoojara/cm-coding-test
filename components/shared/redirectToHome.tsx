@@ -1,11 +1,9 @@
 import { useRouter } from "next/router";
 import { HTMLProps } from "react";
 import { twMerge } from "tailwind-merge";
+import { CommonHtmlDivProps } from "../../types/commonHtmlDivProps";
 
-export const RedirectToHome = ({
-  className,
-  ...props
-}: HTMLProps<HTMLButtonElement>) => {
+export const RedirectToHome = ({ className, ...props }: CommonHtmlDivProps) => {
   const router = useRouter();
 
   const clickHandler = () => {

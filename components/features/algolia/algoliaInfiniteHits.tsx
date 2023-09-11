@@ -1,22 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useInfiniteHits, useInstantSearch } from "react-instantsearch";
 import { twMerge } from "tailwind-merge";
+import { CustomInfiniteHitsProps } from "../../../types/infiniteHitsProps";
 import { Loading } from "../../shared/loading";
-
-interface InfiniteHitsProps {
-  hitComponent: any;
-  className?: {
-    item?: string;
-    root?: string;
-    list?: string;
-  };
-}
 
 export const InfiniteHits = ({
   hitComponent: HitComponent,
   className,
   ...props
-}: InfiniteHitsProps) => {
+}: CustomInfiniteHitsProps) => {
   const { hits, isLastPage, showMore } = useInfiniteHits(props);
   const sentinelRef = useRef(null);
 

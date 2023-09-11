@@ -1,5 +1,5 @@
-import { HTMLProps } from "react";
 import { twMerge } from "tailwind-merge";
+import { CommonHtmlDivProps } from "../../types/commonHtmlDivProps";
 
 export interface CustomFieldForDivider {
   isHorizontal?: Boolean;
@@ -9,7 +9,7 @@ export const Divider = ({
   className,
   isHorizontal = false,
   ...props
-}: HTMLProps<HTMLDivElement> & CustomFieldForDivider) => {
+}: CommonHtmlDivProps & CustomFieldForDivider) => {
   if (isHorizontal) {
     return (
       <div

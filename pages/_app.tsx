@@ -4,7 +4,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import type { AppProps } from "next/app";
 import { ErrorBoundary } from "react-error-boundary";
-import { SomethingWentWrong } from "../components/shared/somethingWenWrong";
+import { SomethingWentWrong } from "../components/shared/somethingWentWrong";
 import "../styles/algolioSearchBox.css";
 import "../styles/globals.css";
 

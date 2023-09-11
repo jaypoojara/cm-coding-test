@@ -4,7 +4,7 @@ import { TopLatestNews } from "../../components/features/topLatestNews";
 import { Divider } from "../../components/shared/divider";
 import { Layout } from "../../components/templates/layout";
 import { contentfulDataFetching } from "../../helpers/contentfulDataFetching";
-import { ContentFulApiResponse } from "../../interfaces/contentFulApiResponse";
+import { ContentFulApiResponse } from "../../types/contentFulApiResponse";
 
 const Home = (props: ContentFulApiResponse) => {
   const { logoDetails, menuLabel, searchLabel, pageTitle } = props;

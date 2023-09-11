@@ -1,33 +1,33 @@
-export interface ContentFulNewsConfig {
+export type ContentFulNewsConfig = {
   menuLabel: string;
   title: string;
   logo: Logo;
   searchLabel: string;
-}
+};
 
-export interface Logo {
+export type Logo = {
   fields: Fields;
-}
+};
 
-export interface Fields {
+export type Fields = {
   title: string;
   description: string;
   file: File;
-}
+};
 
-export interface File {
+export type File = {
   url: string;
   details: Details;
   fileName: string;
   contentType: string;
-}
+};
 
-export interface Details {
+export type Details = {
   size: number;
   image: Image;
-}
+};
 
-export interface Image {
+export type Image = {
   width: number;
   height: number;
-}
+};

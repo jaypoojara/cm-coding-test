@@ -5,8 +5,12 @@ import { Divider } from "../shared/divider";
 import { InfiniteHits } from "./algolia/algoliaInfiniteHits";
 import { Hit } from "./algolia/hit";
 import { Stats } from "./algolia/stats";
+import { foundNewsListsProps } from "../../types/foundNewsListsProps";
+import { CommonHtmlDivProps } from "../../types/commonHtmlDivProps";
 
-export const FoundNewsLists = ({ searchLabel }: { searchLabel: String }) => {
+export const FoundNewsLists = ({
+  searchLabel,
+}: foundNewsListsProps & CommonHtmlDivProps) => {
   return (
     <InstantSearch searchClient={searchClient} indexName="news">
       <section className="found-news-list">

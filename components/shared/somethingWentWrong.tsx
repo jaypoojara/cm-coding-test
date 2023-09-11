@@ -4,7 +4,6 @@ import { RedirectToHome } from "./redirectToHome";
 
 export const SomethingWentWrong = ({ error }: FallbackProps) => {
   // Call resetErrorBoundary() to reset the error boundary and retry the render.
-
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div

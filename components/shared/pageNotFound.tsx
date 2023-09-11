@@ -1,11 +1,8 @@
-import { HTMLProps } from "react";
 import { twMerge } from "tailwind-merge";
+import { CommonHtmlDivProps } from "../../types/commonHtmlDivProps";
 import { RedirectToHome } from "./redirectToHome";
 
-export const PageNotFound = ({
-  className,
-  ...props
-}: HTMLProps<HTMLDivElement>) => {
+export const PageNotFound = ({ className, ...props }: CommonHtmlDivProps) => {
   return (
     <div
       className={twMerge(`flex flex-col items-center`, className)}

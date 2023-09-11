@@ -5,7 +5,7 @@ import { Hit } from "../../components/features/algolia/hit";
 import { Container } from "../../components/shared/container";
 import { Layout } from "../../components/templates/layout";
 import { contentfulDataFetching } from "../../helpers/contentfulDataFetching";
-import { ContentFulApiResponse } from "../../interfaces/contentFulApiResponse";
+import { ContentFulApiResponse } from "../../types/contentFulApiResponse";
 import searchClient from "../../lib/algoliaService";
 
 const NewsWithSlug = (props: ContentFulApiResponse & { slug: string }) => {
