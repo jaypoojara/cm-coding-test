@@ -6,3 +6,8 @@ export type CustomInfiniteHitsProps = {
     list?: string;
   };
 };
+
+export type HitProps = {
+  hit: any;
+  isCardLayout: Boolean;
+};

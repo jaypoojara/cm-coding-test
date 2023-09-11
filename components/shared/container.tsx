@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import { CommonHtmlDivProps } from "../../types/commonHtmlDivProps";
+import { CommonHtmlDivProps } from "./types";
 
 export const Container = ({ className, ...props }: CommonHtmlDivProps) => {
   return (

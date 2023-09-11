@@ -5,8 +5,8 @@ import { Divider } from "../shared/divider";
 import { InfiniteHits } from "./algolia/algoliaInfiniteHits";
 import { Hit } from "./algolia/hit";
 import { Stats } from "./algolia/stats";
-import { foundNewsListsProps } from "../../types/foundNewsListsProps";
-import { CommonHtmlDivProps } from "../../types/commonHtmlDivProps";
+import { foundNewsListsProps } from "./types";
+import { CommonHtmlDivProps } from "../shared/types";
 
 export const FoundNewsLists = ({
   searchLabel,

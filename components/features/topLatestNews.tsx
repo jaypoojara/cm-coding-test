@@ -2,9 +2,9 @@ import { Configure, Hits, InstantSearch } from "react-instantsearch";
 import searchClient from "../../lib/algoliaService";
 import { Container } from "../shared/container";
 import { Hit } from "./algolia/hit";
-import { CommonHtmlDivProps } from "../../types/commonHtmlDivProps";
+import { CommonHtmlDivProps } from "../shared/types";
 
-export const TopLatestNews = (): CommonHtmlDivProps => {
+export const TopLatestNews = () => {
   return (
     <section className="top-latest-news">
       <Container>

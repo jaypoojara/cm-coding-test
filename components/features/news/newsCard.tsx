@@ -1,7 +1,6 @@
 import { twMerge } from "tailwind-merge";
-import { NewsCardProps } from "../../../types/newsCardProps";
 import { NewsCardWrapperDetails } from "./newsCardWrapperDetail";
-
+import { NewsCardProps } from "./types";
 
 export const NewsCard = ({
   news,

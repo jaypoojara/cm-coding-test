@@ -1,5 +1,5 @@
 import { createClient } from "contentful";
-import { ContentFulNewsConfig } from "../interfaces/contentFulNewsConfig";
+import { ContentFulNewsConfig } from "../types/contentFulNewsConfig";
 
 const client = createClient({
   space: "js9tcr1yo5ym",

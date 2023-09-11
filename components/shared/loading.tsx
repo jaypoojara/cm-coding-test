@@ -1,5 +1,5 @@
 import { CircularProgress } from "@mui/material";
-import { CommonHtmlDivProps } from "../../types/commonHtmlDivProps";
+import { CommonHtmlDivProps } from "./types";
 
 export const Loading = ({ className, ...props }: CommonHtmlDivProps) => {
   return (

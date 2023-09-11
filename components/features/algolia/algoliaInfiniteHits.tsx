@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { useInfiniteHits, useInstantSearch } from "react-instantsearch";
 import { twMerge } from "tailwind-merge";
-import { CustomInfiniteHitsProps } from "../../../types/infiniteHitsProps";
 import { Loading } from "../../shared/loading";
+import { CustomInfiniteHitsProps } from "./types";
 
 export const InfiniteHits = ({
   hitComponent: HitComponent,

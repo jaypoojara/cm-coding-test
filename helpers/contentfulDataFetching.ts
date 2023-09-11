@@ -1,6 +1,6 @@
-import { ContentFulApiResponse } from "../interfaces/contentFulApiResponse";
-import { ContentFulNewsConfig } from "../interfaces/contentFulNewsConfig";
 import { getNewsItems } from "../lib/contentfulService";
+import { ContentFulApiResponse } from "../types/contentFulApiResponse";
+import { ContentFulNewsConfig } from "../types/contentFulNewsConfig";
 
 export const contentfulDataFetching =
   async (): Promise<ContentFulApiResponse> => {

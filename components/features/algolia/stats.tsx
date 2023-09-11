@@ -1,7 +1,6 @@
-import { HTMLProps } from "react";
 import { useStats } from "react-instantsearch";
 import { twMerge } from "tailwind-merge";
-import { CommonHtmlDivProps } from "../../../types/commonHtmlDivProps";
+import { CommonHtmlDivProps } from "../../shared/types";
 
 export const Stats = ({ className, ...props }: CommonHtmlDivProps) => {
   const { nbHits } = useStats();

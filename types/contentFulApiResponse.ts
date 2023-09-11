@@ -1,4 +1,4 @@
-import { LogoDetails } from "./logoDetails";
+import { LogoDetails } from "../components/templates/types";
 
 export type ContentFulApiResponse = {
   logoDetails: LogoDetails;

@@ -1,7 +1,4 @@
-export interface FormatDateProps {
-  date: number | Date | undefined;
-  locale?: string;
-}
+import { FormatDateProps } from "../components/shared/types";
 
 export const formatDateFunc = ({ date, locale }: FormatDateProps) => {
   if (!date) return null;

@@ -10,8 +10,8 @@ import {
   NewsCardNameProps,
   NewsCardTopicsTitleProps,
   NewsCardWrapperDetailsProps,
-} from "../../../types/newsCardWrapperDetailsProps";
-import { CommonHtmlDivProps } from "../../../types/commonHtmlDivProps";
+} from "./types";
+import { CommonHtmlDivProps } from "../../shared/types";
 
 const NewsCardTopicsTitle = ({
   topicsTitle,

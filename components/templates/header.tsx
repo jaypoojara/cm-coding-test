@@ -1,7 +1,7 @@
 
 import Image from "next/image";
-import { HeaderProps } from "../../types/headerProps";
 import { Container } from "../shared/container";
+import { HeaderProps } from "./types";
 
 export const Header = (props: HeaderProps) => {
   const {

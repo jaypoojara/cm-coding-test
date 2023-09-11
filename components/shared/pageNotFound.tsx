@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge";
-import { CommonHtmlDivProps } from "../../types/commonHtmlDivProps";
 import { RedirectToHome } from "./redirectToHome";
+import { CommonHtmlDivProps } from "./types";
 
 export const PageNotFound = ({ className, ...props }: CommonHtmlDivProps) => {
   return (

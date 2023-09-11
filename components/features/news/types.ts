@@ -1,3 +1,20 @@
+export type NewsItem = {
+  topicsTitle: string;
+  name: string;
+  description: string;
+  publicationDate: Date;
+  organizationFieldName: string;
+  slug: string;
+  imageUrl: string;
+  originalHit: any;
+};
+
+export type NewsCardProps = {
+  news: NewsItem;
+  isCardLayout?: Boolean;
+  className: string;
+};
+
 export type NewsCardWrapperDetailsProps = {
   name: string;
   topicsTitle: string;

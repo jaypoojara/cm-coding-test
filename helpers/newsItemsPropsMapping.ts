@@ -1,4 +1,4 @@
-import { NewsItem } from "../interfaces/newsItem";
+import { NewsItem } from "../components/features/news/types";
 
 export const mapNewsItemPropsFromApiResponse = (hit: any): NewsItem => {
   const {
